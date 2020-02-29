@@ -1,5 +1,5 @@
 FROM ruby:2.6.5-alpine
-ENV VERSION="v0.1.0" \
+ENV VERSION="v0.2.0" \
     INFO="Truemail lightweight rack based web API 🚀" \
     APP_USER="truemail" \
     APP_HOME="/var/lib/truemail-rack" \
@@ -13,13 +13,15 @@ RUN apk add --no-cache bash && \
 RUN apk add --virtual build-dependencies git && \
     git clone https://github.com/truemail-rb/truemail-rack.git $TMP -q && \
     cd $TMP && git checkout $VERSION -q && \
-    mv app config config.ru .ruby-version Gemfile Gemfile.lock $APP_HOME && \
+    mv app config config.ru .ruby-version Gemfile* $APP_HOME && \
     rm -rf $TMP && chown -R $APP_USER:$APP_USER $APP_HOME && \
     apk del build-dependencies
 WORKDIR $APP_HOME
 RUN gem i bundler -v $(tail -1 Gemfile.lock | tr -d ' ')
 RUN apk add --virtual build-dependencies make cmake g++ && \
+    BUNDLE_FORCE_RUBY_PLATFORM=1 && \
     bundle check || bundle install --system --without=test development && \
+    rm -rf /usr/local/bundle/cache/*.gem && \
     apk del build-dependencies
 USER $APP_USER
 EXPOSE $APP_PORT
