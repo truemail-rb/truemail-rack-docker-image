@@ -1,12 +1,10 @@
 FROM ruby:2.6.5-alpine as Builder
-ENV VERSION="v0.2.0" \
-    APP_HOME="/var/lib/truemail-rack" \
+ENV APP_HOME="/var/lib/truemail-rack" \
     TMP="/var/lib/truemail-rack/tmp"
-LABEL version=$VERSION
 MAINTAINER admin@bestweb.com.ua
 RUN apk add --virtual build-dependencies git && \
     git clone https://github.com/truemail-rb/truemail-rack.git $TMP -q && \
-    cd $TMP && git checkout $VERSION -q && \
+    cd $TMP && git checkout v0.2.0 -q && \
     mv app config config.ru .ruby-version Gemfile* $APP_HOME && rm -rf $TMP && \
     apk del build-dependencies
 WORKDIR $APP_HOME
@@ -30,4 +28,4 @@ COPY --from=Builder --chown=truemail:truemail $APP_HOME $APP_HOME
 USER $APP_USER
 WORKDIR $APP_HOME
 EXPOSE $APP_PORT
-CMD echo $INFO && thin -R config.ru -a 0.0.0.0 -p $APP_PORT start
+CMD echo $INFO && thin -R config.ru -a 0.0.0.0 -p $APP_PORT -e production start
