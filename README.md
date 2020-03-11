@@ -1,6 +1,6 @@
 # <img src='https://repository-images.githubusercontent.com/243022570/c3ae4600-57ef-11ea-9cb1-73cb7b0d580c' height='250' alt='Truemail lightweight rack based web API docker image' />
 
-***Truemail rack docker image*** :whale: - lightweight rack based web API dockerized image for [Truemail server](https://github.com/truemail-rb/truemail-rack). Verify email via Regex, DNS and SMTP. Be sure that email address valid and exists.
+***Truemail rack docker image*** :whale: - lightweight rack based web API dockerized image of [Truemail server](https://github.com/truemail-rb/truemail-rack). Verify email via Regex, DNS and SMTP. Be sure that email address valid and exists.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@
 
 ## Usage
 
-List of [available Truemail server options](https://github.com/truemail-rb/truemail-rack/blob/master/README.md#usage), represented as environment variables. Example of usage with docker-compose:
+List of [available Truemail server options](https://github.com/truemail-rb/truemail-rack/blob/master/README.md#usage), represented as environment variables. Example of usage with docker-compose (Truemail rack image hosted on [dockerhub](https://hub.docker.com/r/truemail/truemail-rack)):
 
 ```yml
 # docker-compose.yml
@@ -24,7 +24,7 @@ version: "3.7"
 
 services:
   truemail:
-    image: truemail/truemail-rack:v0.2.1
+    image: truemail/truemail-rack:v0.2.2
     ports:
       - 9292:9292
     environment:
