@@ -1,7 +1,6 @@
 FROM ruby:2.6.5-alpine as Builder
 ENV APP_HOME="/var/lib/truemail-rack" \
     TMP="/var/lib/truemail-rack/tmp"
-MAINTAINER admin@bestweb.com.ua
 RUN apk add --virtual build-dependencies git && \
     git clone https://github.com/truemail-rb/truemail-rack.git $TMP -q && \
     cd $TMP && git checkout v0.2.0 -q && \
@@ -21,10 +20,11 @@ ENV INFO="Truemail lightweight rack based web API 🚀" \
     APP_USER="truemail" \
     APP_HOME="/var/lib/truemail-rack" \
     APP_PORT="9292"
+MAINTAINER admin@bestweb.com.ua
 LABEL description=$INFO
 RUN adduser -D $APP_USER
 COPY --from=Builder /usr/local/bundle/ /usr/local/bundle/
-COPY --from=Builder --chown=truemail:truemail $APP_HOME $APP_HOME
+COPY --from=Builder --chown=$APP_USER:$APP_USER $APP_HOME $APP_HOME
 USER $APP_USER
 WORKDIR $APP_HOME
 EXPOSE $APP_PORT
