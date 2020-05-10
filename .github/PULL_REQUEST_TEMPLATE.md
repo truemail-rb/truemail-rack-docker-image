@@ -41,6 +41,3 @@
 - [ ] My change requires a change to the documentation
 - [ ] I have updated the documentation accordingly
 - [ ] I have read the [**CONTRIBUTING** document](https://github.com/truemail-rb/truemail-rack-docker-image/blob/master/CONTRIBUTING.md)
-- [ ] I have added tests to cover my changes
-- [ ] I have run `bundle exec rspec` from the root directory to see all new and existing tests pass
-- [ ] I have run `rubocop` and `reek` to ensure the code style is valid
