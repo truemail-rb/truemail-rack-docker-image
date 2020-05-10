@@ -2,7 +2,7 @@
 
 ### New Issue Checklist
 
-- [ ] I have updated truemail to the latest version
+- [ ] I have used the latest version of truemail image
 - [ ] I have read the [Contribution Guidelines](https://github.com/truemail-rb/truemail-rack-docker-image/blob/master/CONTRIBUTING.md)
 - [ ] I have read the [documentation](https://github.com/truemail-rb/truemail-rack-docker-image/blob/master/README.md)
 - [ ] I have searched for [existing GitHub issues](https://github.com/truemail-rb/truemail-rack-docker-image/issues)
