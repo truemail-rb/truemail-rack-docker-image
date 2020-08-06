@@ -18,7 +18,7 @@ Guidelines for bug reports:
 
 1. **Use the GitHub issue search** &mdash; check if the issue has already been reported
 2. **Check if the issue has been fixed** &mdash; try to reproduce it using the latest `master` or development branch in the repository
-3. Truemail [issue template](.github/ISSUE_TEMPLATE.md)
+3. Truemail rack docker image [issue template](.github/ISSUE_TEMPLATE.md)
 
 A good bug report shouldn't leave others needing to chase you up for more information. Please try to be as detailed as possible in your report. What is your environment? What steps will reproduce the issue? What would you expect to be the outcome? All these details will help people to fix any potential bugs.
 
@@ -38,7 +38,7 @@ Please adhere to the coding conventions used throughout a project (indentation, 
 
 Guidelines for pull requests:
 
-1. Truemail [pull request template](.github/PULL_REQUEST_TEMPLATE.md)
+1. Truemail rack docker image [pull request template](.github/PULL_REQUEST_TEMPLATE.md)
 2. Fork the repo
 3. Run the tests. This is to make sure your starting point works. Tests can be run via ```rspec```
 4. Create a new branch and make your changes. This includes tests for features!
