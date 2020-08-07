@@ -21,10 +21,13 @@ ENV INFO="Truemail lightweight rack based web API 🚀" \
     APP_HOME="/var/lib/truemail-rack" \
     APP_PORT="9292"
 LABEL description=$INFO
-RUN adduser -D $APP_USER
+RUN apk add curl && \
+    adduser -D $APP_USER
 COPY --from=Builder /usr/local/bundle/ /usr/local/bundle/
 COPY --from=Builder --chown=truemail:truemail $APP_HOME $APP_HOME
 USER $APP_USER
 WORKDIR $APP_HOME
 EXPOSE $APP_PORT
 CMD echo $INFO && thin -R config.ru -a 0.0.0.0 -p $APP_PORT -e production start
+HEALTHCHECK --interval=5s --timeout=3s \
+  CMD curl -f echo "http://localhost:${APP_PORT}/healthcheck" || exit 1
