@@ -1,6 +1,6 @@
-# <img src='https://repository-images.githubusercontent.com/243022570/c3ae4600-57ef-11ea-9cb1-73cb7b0d580c' height='250' alt='Truemail lightweight rack based web API docker image' />
+# ![Truemail lightweight rack based web API docker image](https://truemail-rb.org/assets/images/truemail_logo.png)
 
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/truemail/truemail-rack)](https://hub.docker.com/r/truemail/truemail-rack/builds) [![Docker Image Version](https://img.shields.io/docker/v/truemail/truemail-rack)](https://hub.docker.com/r/truemail/truemail-rack/builds) ![Docker Image Size](https://img.shields.io/docker/image-size/truemail/truemail-rack) ![Docker Pulls](https://img.shields.io/docker/pulls/truemail/truemail-rack) [![GitHub](https://img.shields.io/github/license/truemail-rb/truemail-rack-docker-image)](LICENSE.txt) [![Gitter](https://badges.gitter.im/truemail-rb/community.svg)](https://gitter.im/truemail-rb/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/truemail/truemail-rack)](https://hub.docker.com/r/truemail/truemail-rack/builds) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/truemail-rb/truemail-rack-docker-image) ![Docker Image Size](https://img.shields.io/docker/image-size/truemail/truemail-rack) ![Docker Pulls](https://img.shields.io/docker/pulls/truemail/truemail-rack) [![GitHub](https://img.shields.io/github/license/truemail-rb/truemail-rack-docker-image)](LICENSE.txt) [![Gitter](https://badges.gitter.im/truemail-rb/community.svg)](https://gitter.im/truemail-rb/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 ***Truemail rack docker image*** :whale: - lightweight rack based web API dockerized image of [Truemail server](https://github.com/truemail-rb/truemail-rack). Verify email via Regex, DNS and SMTP. Be sure that email address valid and exists.
 
@@ -31,7 +31,7 @@ version: "3.7"
 
 services:
   truemail:
-    image: truemail/truemail-rack:v0.2.7
+    image: truemail/truemail-rack:v0.2.8 # for latest version you can use just truemail/truemail-rack:latest
     ports:
       - 9292:9292
     environment:
@@ -46,7 +46,7 @@ All Truemail extensions: https://github.com/truemail-rb
 
 | Name | Type | Description |
 | --- | --- | --- |
-| [truemail](https://github.com/rubygarage/truemail) | ruby gem | Configurable framework agnostic plain Ruby email validator, main core |
+| [truemail](https://github.com/truemail-rb/truemail) | ruby gem | Configurable framework agnostic plain Ruby email validator, main core |
 | [truemail server](https://github.com/truemail-rb/truemail-rack) | ruby app | Lightweight rack based web API wrapper for Truemail |
 | [truemail-ruby-client](https://github.com/truemail-rb/truemail-ruby-client) | ruby gem | Truemail web API client library for Ruby |
 | [truemail-crystal-client](https://github.com/truemail-rb/truemail-crystal-client) | crystal shard | Truemail web API client library for Crystal |
