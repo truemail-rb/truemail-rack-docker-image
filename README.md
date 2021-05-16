@@ -8,7 +8,7 @@
 [![Gitter](https://badges.gitter.im/truemail-rb/community.svg)](https://gitter.im/truemail-rb/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
-***Truemail rack docker image*** :whale: - lightweight rack based web API dockerized image of [Truemail server](https://truemail-rb.org/truemail-rack). Verify email via Regex, DNS and SMTP. Be sure that email address valid and exists.
+***Truemail rack docker image*** :whale: - lightweight rack based web API dockerized image of [Truemail server](https://truemail-rb.org/truemail-rack). Verify email via Regex, DNS, SMTP and even more. Be sure that email address valid and exists.
 
 > Actual and maintainable documentation :books: for developers is living [here](https://truemail-rb.org/truemail-rack-docker-image).
 
@@ -39,7 +39,7 @@ version: "3.7"
 
 services:
   truemail:
-    image: truemail/truemail-rack:v0.2.14 # for latest version you can use just truemail/truemail-rack:latest
+    image: truemail/truemail-rack:v0.2.15 # for latest version you can use just truemail/truemail-rack:latest
     ports:
       - 9292:9292
     environment:
