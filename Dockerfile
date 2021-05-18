@@ -3,7 +3,7 @@ ENV APP_HOME="/var/lib/truemail-rack" \
     TMP="/var/lib/truemail-rack/tmp"
 RUN apk add --virtual build-dependencies git && \
     git clone https://github.com/truemail-rb/truemail-rack.git $TMP -q && \
-    cd $TMP && git checkout v0.2.12 -q && \
+    cd $TMP && git checkout v0.2.13 -q && \
     mv app config config.ru .ruby-version Gemfile* $APP_HOME && rm -rf $TMP && \
     apk del build-dependencies
 WORKDIR $APP_HOME
