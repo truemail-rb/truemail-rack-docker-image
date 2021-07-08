@@ -2,23 +2,27 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.16] - 2020-05-18
+## [0.2.17] - 2021-07-08
+
+### Switch to truemail-rack 0.2.14
+
+## [0.2.16] - 2021-05-18
 
 ### Switch to truemail-rack 0.2.13
 
-## [0.2.15] - 2020-05-16
+## [0.2.15] - 2021-05-16
 
 ### Switch to truemail-rack 0.2.12
 
-## [0.2.14] - 2020-03-25
+## [0.2.14] - 2021-03-25
 
 ### Switch to truemail-rack 0.2.11
 
-## [0.2.13] - 2020-02-08
+## [0.2.13] - 2021-02-08
 
 ### Switch to truemail-rack 0.2.10
 
-## [0.2.12] - 2020-01-21
+## [0.2.12] - 2021-01-21
 
 ### Switch to truemail-rack 0.2.9
 
