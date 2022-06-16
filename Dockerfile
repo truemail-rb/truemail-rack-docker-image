@@ -1,9 +1,9 @@
-FROM ruby:3.1.1-alpine as Builder
+FROM ruby:3.1.2-alpine as Builder
 ENV APP_HOME="/var/lib/truemail-rack" \
     TMP="/var/lib/truemail-rack/tmp"
 RUN apk add --virtual build-dependencies git && \
     git clone https://github.com/truemail-rb/truemail-rack.git $TMP -q && \
-    cd $TMP && git checkout v0.4.0 -q && \
+    cd $TMP && git checkout v0.4.1 -q && \
     mv app config config.ru .ruby-version Gemfile* $APP_HOME && rm -rf $TMP && \
     apk del build-dependencies
 WORKDIR $APP_HOME
@@ -15,7 +15,7 @@ RUN apk add --virtual build-dependencies make cmake g++ && \
     find /usr/local/bundle/gems/ -regex ".*\.[coh]" -delete && \
     apk del build-dependencies
 
-FROM ruby:3.1.1-alpine
+FROM ruby:3.1.2-alpine
 ENV INFO="Truemail lightweight rack based web API 🚀" \
     APP_USER="truemail" \
     APP_HOME="/var/lib/truemail-rack" \
