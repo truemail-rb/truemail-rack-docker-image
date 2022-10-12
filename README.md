@@ -1,6 +1,5 @@
 # ![Truemail lightweight rack based web API docker image](https://truemail-rb.org/assets/images/truemail_logo.png)
 
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/truemail/truemail-rack)](https://hub.docker.com/r/truemail/truemail-rack/builds)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/truemail-rb/truemail-rack-docker-image)
 ![Docker Image Size](https://img.shields.io/docker/image-size/truemail/truemail-rack)
 ![Docker Pulls](https://img.shields.io/docker/pulls/truemail/truemail-rack)
@@ -39,7 +38,7 @@ version: "3.7"
 
 services:
   truemail:
-    image: truemail/truemail-rack:v0.4.1 # for latest version you can use just truemail/truemail-rack:latest
+    image: truemail/truemail-rack:v0.4.2 # for latest version you can use just truemail/truemail-rack:latest
     ports:
       - 9292:9292
     environment:
