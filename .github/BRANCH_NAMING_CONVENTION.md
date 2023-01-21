@@ -27,7 +27,7 @@ git rebase -i 6467fe36232401fa740af067cfd8ac9ec932fed2~1 # example
 
 Please complete your commit description folowing next pattern:
 
-```
+```code
 Technical/Add info files # should be the same name as your branch name
 
 * Added license, changelog, contributing, code of conduct docs
