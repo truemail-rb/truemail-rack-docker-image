@@ -1,0 +1,79 @@
+---
+
+version: 2.1
+
+defaults: &defaults
+  working_directory: ~/truemail-rack-docker-image
+  docker:
+    - image: alpinelinux/docker-cli
+
+jobs:
+  linters:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      - run:
+          name: Installing linters
+          command: |
+                apk add --update git npm shellcheck yamllint
+                npm install --global --save-dev git+https://github.com/streetsidesoftware/cspell-cli markdownlint-cli lefthook
+                cp .circleci/linter_configs/.lefthook.yml lefthook.yml
+
+      - run:
+          name: Running linters
+          command: lefthook run linters
+
+  tag:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      - add_ssh_keys:
+          fingerprints:
+            - "b2:6b:64:61:b9:9c:d0:c2:d8:84:0f:d1:07:f8:44:ca"
+
+      - run:
+          name: Installing tagging tools
+          command: apk add --update git
+
+      - run:
+          name: Publishing new tag to GitHub
+          command: ./.circleci/scripts/tag.sh
+
+  release:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      - add_ssh_keys:
+          fingerprints:
+            - "b2:6b:64:61:b9:9c:d0:c2:d8:84:0f:d1:07:f8:44:ca"
+
+      - run:
+          name: Installing releasing tools
+          command: apk add --update git github-cli
+
+      - run:
+          name: Publishing new release to DockerHub, GitHub
+          command: ./.circleci/scripts/release.sh docker.io truemail/truemail-rack
+
+workflows:
+  build:
+    jobs:
+      - linters
+      - tag:
+          requires:
+            - linters
+          filters:
+            branches:
+              only: master
+      - release:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /v[0-9]+(\.[0-9]+)*(-.*)*/
