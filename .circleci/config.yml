@@ -26,7 +26,10 @@ jobs:
           command: lefthook run linters
 
   tag:
-    <<: *defaults
+    working_directory: ~/truemail-rack-docker-image
+
+    docker:
+      - image: cimg/base:2023.03
 
     steps:
       - checkout
@@ -34,10 +37,6 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "b2:6b:64:61:b9:9c:d0:c2:d8:84:0f:d1:07:f8:44:ca"
-
-      - run:
-          name: Installing tagging tools
-          command: apk add --update git
 
       - run:
           name: Publishing new tag to GitHub
