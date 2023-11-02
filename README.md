@@ -39,7 +39,7 @@ version: "3.7"
 
 services:
   truemail:
-    image: truemail/truemail-rack:v0.8.1 # for latest version you can use just truemail/truemail-rack:latest
+    image: truemail/truemail-rack:v0.9.0 # for latest version you can use just truemail/truemail-rack:latest
     ports:
       - 9292:9292
     environment:
