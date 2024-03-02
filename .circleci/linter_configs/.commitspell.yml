@@ -1,0 +1,27 @@
+---
+
+enableGlobDot: true
+
+patterns:
+  - name: GithubUser
+    pattern: /\[@.+\]/gmx
+
+languageSettings:
+  - languageId: markdown
+    ignoreRegExpList:
+      - Email
+      - GithubUser
+
+words:
+  - autoreleasing
+  - gitter
+  - trotsenko
+  - vladislav
+  - bestwebua
+  - codebases
+  - dockerhub
+  - dockerized
+  - healthcheck
+  - truemail
+  - lefthook
+  - commitspell
